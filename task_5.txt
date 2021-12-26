@@ -1,0 +1,44 @@
+class Person(val firstName: String, val lastName: String, val taxToPay: Double) {
+  def taxToPayDef: Double = taxToPay
+}
+
+trait Employee extends Person {
+  var salary: Double = 0
+  override def taxToPayDef: Double = salary * 0.2
+}
+
+trait Student extends Person {
+  override def taxToPayDef: Double = 0
+}
+
+trait Teacher extends Employee {
+   override def taxToPayDef: Double = salary * 0.1
+}
+
+val person = new Person("Joel", "Prime", 12.3)
+val employee = new Person("EmployeeName", "EmployeeLastNAme", 24.6) with Employee
+val student = new Person("StudentName", "StudentLastNAme", 2.6) with Student
+val teacher = new Person("TeacherName", "TeacherLastNAme", 223.6) with Teacher
+val teacher2 = new Person("TeacherName2", "TeacherLastNAme2", 46463.6) with Teacher
+val student2 = new Person("StudentName2", "StudentLastNAme2", 2222.6) with Student
+
+println("Task_5_Results")
+println(person.taxToPay)
+println(employee.taxToPay)
+println(student.taxToPay)
+println(teacher.taxToPay)
+println(student2.taxToPay)
+println(student.taxToPay)
+println(teacher2.taxToPay)
+
+
+
+
+Task_5_Results
+12.3
+24.6
+2.6
+223.6
+2222.6
+2.6
+46463.6

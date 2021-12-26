@@ -1,0 +1,16 @@
+def matchDaysOfWeek(dayOfWeek: String) = dayOfWeek.toLowerCase() match {
+  case dayOfWeek if (dayOfWeek == "monday" ||dayOfWeek == "tuesday" ||dayOfWeek == "wednesday"
+  ||dayOfWeek == "thursday" ||dayOfWeek == "friday") => "work"
+  case dayOfWeek if (dayOfWeek == "sunday" || dayOfWeek == "saturday") => "weekend"
+  case _ => "no such day"
+}
+println("Task_1_Results")
+println(matchDaysOfWeek("MonDay"))
+println(matchDaysOfWeek("sunday"))
+println(matchDaysOfWeek("something"))
+
+
+Task_1_Results
+work
+weekend
+no such day

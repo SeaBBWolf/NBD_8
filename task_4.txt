@@ -1,0 +1,8 @@
+def doTrice(value: Int, function: Int => Int) = function(function(function(value)))
+println("Task_4_Results")
+println("Function a=> 1+a:" + doTrice(7, a=> 1+a))
+
+
+
+Task_4_Results
+Function a=> 1+a:10

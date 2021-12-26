@@ -1,0 +1,31 @@
+class BankAccount(private var initialBalance: Double) {
+  
+  def currentBalance: Double = initialBalance
+  
+  def this() = {
+    this(0) 
+  }
+  
+  def deposit(amount: Double): Unit = {
+    this.initialBalance = this.initialBalance + amount
+  }
+  
+  def withdraw(amount: Double): Unit = {
+    this.initialBalance = this.initialBalance - amount
+  }
+}
+
+println("Task_2_Results")
+val bankAccountOne = BankAccount(15.2)
+println(bankAccountOne.currentBalance)
+bankAccountOne.withdraw(5.2)
+println(bankAccountOne.currentBalance)
+bankAccountOne.deposit(1)
+println(bankAccountOne.currentBalance)
+
+
+
+Task_2_Results
+15.2
+10.0
+11.0

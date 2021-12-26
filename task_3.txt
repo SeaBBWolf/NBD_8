@@ -1,0 +1,22 @@
+class Person(var firstName: String, var lastName: String) {}
+
+val personOne = Person("Vladimir", "Smolin")
+val personTwo = Person("Joel", "Kozlov")
+val personThree = Person("Jimmy", "Dark")
+
+def tellGreeting(person: Person) = person match {
+  case person if person.firstName == "Vladimir" => "Hello Volodia"
+  case person if person.lastName == "Kozlov" => "Kozlov. You don't get to rush this"
+  case _ => "Hello"
+}
+println("Task_3_Results")
+println(tellGreeting(personOne))
+println(tellGreeting(personTwo))
+println(tellGreeting(personThree))
+
+
+
+Task_3_Results
+Hello Volodia
+Kozlov. You don't get to rush this
+Hello
